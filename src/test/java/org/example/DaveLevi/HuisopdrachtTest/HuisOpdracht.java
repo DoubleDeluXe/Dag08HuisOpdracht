@@ -49,15 +49,15 @@ public class HuisOpdracht {
     }
 
     @Test
-    void postcodePrinterTest() {
+    void testPostcodePrinter() {
         char[] testPostcode = {'3', '5', '5', '2', 'a', 'j'};
         Adres mooistraat12 = maakTestAdres();
         System.out.println(mooistraat12.printPostcode(testPostcode));
     }
 
     @Test
-    void tests() {
-        char[] testPostcode = {'3', '5', '5', '2', 'a', 'j'};
+    void koppelAdresAanHuis() {
+        //char[] testPostcode = {'3', '5', '5', '2', 'a', 'j'};
         //String x = Arrays.toString(testPostcode);
         //System.out.println(x);
         Adres mooistraat12 = maakTestAdres();
@@ -69,11 +69,11 @@ public class HuisOpdracht {
     }
 
     @Test
-    void capaciteitTest(){
+    void defineerCapaciteitBezoekersMetCoronaregels(){
         //Coronaregels
-        int maxAantalPersonenin1Huis = 12;
-        int bezoekerLimiet = 6;
-        int capaciteitPerKamer = 2;
+        int regelAantalPersonenin1Huis = 12;
+        int regelBezoekerlimiet = 6;
+        int regelCapaciteitPerKamer = 2;
 
         //Voorbeeldhuis Mooistraat 12 aanmaken
         Huis voorbeeldHuis = maakTesthuis();
@@ -85,13 +85,13 @@ public class HuisOpdracht {
         voorbeeldHuis.setAantalBewoners(kamersTest);
 
         int bewoners = voorbeeldHuis.getAantalBewoners();
-        int capaciteit = capaciteitPerKamer * voorbeeldHuis.getKamers();
+        int capaciteit = regelCapaciteitPerKamer * voorbeeldHuis.getKamers();
         int maxBezoekers = capaciteit - bewoners;
-        if (maxBezoekers > bezoekerLimiet) {
-            maxBezoekers = bezoekerLimiet;
+        if (maxBezoekers > regelBezoekerlimiet) {
+            maxBezoekers = regelBezoekerlimiet;
         }
-        if (bewoners+maxBezoekers > maxAantalPersonenin1Huis) {
-            maxBezoekers = maxAantalPersonenin1Huis - bewoners;
+        if (bewoners+maxBezoekers > regelAantalPersonenin1Huis) {
+            maxBezoekers = regelAantalPersonenin1Huis - bewoners;
         }
 
         System.out.println("Op " + voorbeeldHuis.getHuisAdres().getStraat() + " " + voorbeeldHuis.getHuisAdres().getHuisnNummer() + " is plek voor maximaal " + capaciteit + " personen.");

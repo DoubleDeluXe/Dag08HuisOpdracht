@@ -75,25 +75,23 @@ public class HuisOpdracht {
         int regelBezoekerlimiet = 6;
         int regelCapaciteitPerKamer = 2;
 
-        //Voorbeeldhuis Mooistraat 12 aanmaken
+        //Wijzig deze varibbelen om het testhuis aan te passen
+        int bewonersTest = 3;
+        int kamersTest = 7;
+
+        //Test
         Huis voorbeeldHuis = maakTesthuis();
-
-        //Wijzig deze varibbelen om te test aan te passen
-        int bewonersTest =  3;
-        int kamersTest =    7;
-        voorbeeldHuis.setKamers(bewonersTest);
-        voorbeeldHuis.setAantalBewoners(kamersTest);
-
+        voorbeeldHuis.setKamers(kamersTest);
+        voorbeeldHuis.setAantalBewoners(bewonersTest);
         int bewoners = voorbeeldHuis.getAantalBewoners();
         int capaciteit = regelCapaciteitPerKamer * voorbeeldHuis.getKamers();
         int maxBezoekers = capaciteit - bewoners;
         if (maxBezoekers > regelBezoekerlimiet) {
             maxBezoekers = regelBezoekerlimiet;
         }
-        if (bewoners+maxBezoekers > regelAantalPersonenin1Huis) {
+        if (bewoners + maxBezoekers > regelAantalPersonenin1Huis) {
             maxBezoekers = regelAantalPersonenin1Huis - bewoners;
         }
-
         System.out.println("Op " + voorbeeldHuis.getHuisAdres().getStraat() + " " + voorbeeldHuis.getHuisAdres().getHuisnNummer() + " is plek voor maximaal " + capaciteit + " personen.");
         System.out.println("Met de huidige maatregelen mogen er " + maxBezoekers + " personen op bezoek komen");
     }

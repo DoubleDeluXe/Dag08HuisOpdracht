@@ -9,19 +9,19 @@ public class Adres {
     private String stad;
     private char[] postcode;
 
-    long getHuisID(){
+    public long getHuisID(){
         return huisID;
     }
-    String getStraat() {
+    public String getStraat() {
         return straat;
     }
-    int getHuisnNummer(){
+    public int getHuisnNummer(){
         return huisNummer;
     }
-    String getStad(){
+    public String getStad(){
         return stad;
     }
-    char[] getPostcode(){
+    public char[] getPostcode(){
         return postcode;
     }
     public Adres(long newHuisID, String newStraat, int newHuisnummer, String newStad, char[] newPostcode) {
@@ -32,19 +32,19 @@ public class Adres {
         setPostcode(newPostcode);
 
     }
-    void setHuisID(long setHuisID){
+    public void setHuisID(long setHuisID){
         huisID = setHuisID;
     }
-    void setStraat(String setStraat){
+    public void setStraat(String setStraat){
         straat = setStraat;
     }
-    void setHuisnummer(int newHuisNummer){
+    public void setHuisnummer(int newHuisNummer){
         huisNummer = newHuisNummer;
     }
-    void setStad(String newStad){
+    public void setStad(String newStad){
         stad = newStad;
     }
-    void setPostcode(char[] newPostcode){
+    public void setPostcode(char[] newPostcode){
         postcode = newPostcode;
     }
 

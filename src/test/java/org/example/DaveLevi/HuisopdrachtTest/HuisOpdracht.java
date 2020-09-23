@@ -29,31 +29,6 @@ import java.util.Scanner;
 
 public class HuisOpdracht {
 
-    @Test
-    int randomGroepGroote(int groote){
-        return (int) (Math.random()*groote+1);
-    }
-
-    @Test
-    void maakRandomGroepen(){
-        Scanner eye = new Scanner(System.in);
-        System.out.println("wat is de maximale groepsgroote?");
-        int maxGroepGroote = eye.nextInt();
-        Groep groep1 = new Groep(randomGroepGroote(maxGroepGroote), 3);
-        Groep groep2 = new Groep(randomGroepGroote(maxGroepGroote), 3);
-        Groep groep3 = new Groep(randomGroepGroote(maxGroepGroote), 3);
-        Groep groep4 = new Groep(randomGroepGroote(maxGroepGroote), 3);
-        Groep groep5 = new Groep(randomGroepGroote(maxGroepGroote), 3);
-
-    }
-    }
-
-    void gastenManager(){
-
-    }
-    /*
-==================================================================
-     */
 
     @Test
     Adres maakTestAdres(){

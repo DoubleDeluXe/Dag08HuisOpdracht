@@ -5,6 +5,8 @@ public class Groep {
     private int zinInBier;
 
     public Groep(int groepGroote, int zinInBier) {
+        setGroepGroote(groepGroote);
+        setZinInBier(zinInBier);
     }
 
     public int getGroepGroote() {

@@ -1,4 +1,4 @@
-package org.example.DaveLevi.Adres;
+package org.example.DaveLevi.HuisopdrachtTest;
 
 import org.assertj.core.util.VisibleForTesting;
 
@@ -48,7 +48,7 @@ public class Adres {
         postcode = newPostcode;
     }
 
-    public String uitleesHuisAdres(){
+    public String ToString(){
         return "Huis ID = " + huisID + ". Adres = " + straat + " " + huisNummer + ", " + printPostcode(postcode) + " " + stad;
     }
 

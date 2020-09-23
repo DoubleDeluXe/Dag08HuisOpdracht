@@ -1,6 +1,4 @@
-package org.example.DaveLevi.Huis;
-
-import org.example.DaveLevi.Adres.Adres;
+package org.example.DaveLevi.HuisopdrachtTest;
 
 public class Huis {
     private long huisID;
@@ -26,7 +24,7 @@ public class Huis {
     public void setHuisID(long setHuisID){
         huisID = setHuisID;
     }
-    public Adres getHuisAdres(){
+    public Adres getAdres(){
         return huisAdres;
     }
     public void setHuisAdres(Adres newHuisAdres){

@@ -23,14 +23,37 @@ BOA OBJECT: Iets wat kijkt wanneer je over capaciteit bent
 
  */
 
-
-import org.example.DaveLevi.Huis.Huis;
 import org.junit.jupiter.api.Test;
-import org.example.DaveLevi.Adres.Adres;
 
-import java.util.Arrays;
+import java.util.Scanner;
 
 public class HuisOpdracht {
+
+    @Test
+    int randomGroepGroote(int groote){
+        return (int) (Math.random()*groote+1);
+    }
+
+    @Test
+    void maakRandomGroepen(){
+        Scanner eye = new Scanner(System.in);
+        System.out.println("wat is de maximale groepsgroote?");
+        int maxGroepGroote = eye.nextInt();
+        Groep groep1 = new Groep(randomGroepGroote(maxGroepGroote), 3);
+        Groep groep2 = new Groep(randomGroepGroote(maxGroepGroote), 3);
+        Groep groep3 = new Groep(randomGroepGroote(maxGroepGroote), 3);
+        Groep groep4 = new Groep(randomGroepGroote(maxGroepGroote), 3);
+        Groep groep5 = new Groep(randomGroepGroote(maxGroepGroote), 3);
+
+    }
+    }
+
+    void gastenManager(){
+
+    }
+    /*
+==================================================================
+     */
 
     @Test
     Adres maakTestAdres(){
@@ -61,17 +84,17 @@ public class HuisOpdracht {
         //String x = Arrays.toString(testPostcode);
         //System.out.println(x);
         Adres mooistraat12 = maakTestAdres();
-        System.out.println(mooistraat12.uitleesHuisAdres());
+        System.out.println(mooistraat12.ToString());
         //
         Huis voorbeeldHuis = maakTesthuis();
         System.out.println(voorbeeldHuis.uitleesHuis());
-        System.out.println(voorbeeldHuis.getHuisAdres().uitleesHuisAdres());
+        System.out.println(voorbeeldHuis.getAdres().ToString());
     }
 
     @Test
     void defineerCapaciteitBezoekersMetCoronaregels(){
         //Coronaregels
-        int regelAantalPersonenin1Huis = 12;
+        int regelAantalPersonenin1Huis = 8;
         int regelBezoekerlimiet = 6;
         int regelCapaciteitPerKamer = 2;
 
@@ -92,7 +115,8 @@ public class HuisOpdracht {
         if (bewoners + maxBezoekers > regelAantalPersonenin1Huis) {
             maxBezoekers = regelAantalPersonenin1Huis - bewoners;
         }
-        System.out.println("Op " + voorbeeldHuis.getHuisAdres().getStraat() + " " + voorbeeldHuis.getHuisAdres().getHuisnNummer() + " is plek voor maximaal " + capaciteit + " personen.");
+        System.out.println("Op " + voorbeeldHuis.getAdres().getStraat() + " " +
+                voorbeeldHuis.getAdres().getHuisnNummer() + " is plek voor maximaal " + capaciteit + " personen.");
         System.out.println("Met de huidige maatregelen mogen er " + maxBezoekers + " personen op bezoek komen");
     }
 

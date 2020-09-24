@@ -14,10 +14,10 @@ public class CaféOpdracht {
     waarschijnlijk een te abitieus idee maar we beginnen gewoon tot het te complex wordt!
      */
     @Test
-    void maakRandomGroepen(){
+    void CafeCapaciteitsTest(){
         //Scanner eye = new Scanner(System.in);
 
-        welkom();
+        welkomText();
         int capaciteit = vraagCaféCapaciteit();
 
         int maxGroepGroote = vraagDeGroepsGroote(capaciteit);
@@ -53,7 +53,7 @@ public class CaféOpdracht {
         return (int) (Math.random()*groote+1);
     }
 
-    void welkom(){
+    void welkomText(){
         fancyLine();
         System.out.println("Welkom bij café Valence!");
         fancyLine();

@@ -17,4 +17,27 @@ public class Café {
         this.naam = naam;
         this.capaciteit = capaciteit;
     }
+
+    public String getNaam() {
+        return naam;
+    }
+
+    public void setNaam(String naam) {
+        this.naam = naam;
+    }
+
+    public int getCapaciteit() {
+        return capaciteit;
+    }
+
+    public void setCapaciteit(int capaciteit) {
+        this.capaciteit = capaciteit;
+    }
+
+    public String toString() {
+        return "Café{" +
+                "naam='" + naam + '\'' +
+                ", capaciteit=" + capaciteit +
+                '}';
+    }
 }

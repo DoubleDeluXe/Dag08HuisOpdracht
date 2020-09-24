@@ -15,7 +15,7 @@ public class CaféOpdracht {
      */
     @Test
     void maakRandomGroepen(){
-        Scanner eye = new Scanner(System.in);
+        //Scanner eye = new Scanner(System.in);
 
         welkom();
         int capaciteit = vraagCaféCapaciteit();
